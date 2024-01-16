@@ -2337,8 +2337,6 @@ dependencies = [
 [[package]]
 name = "rustc-tools"
 version = "0.3.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "32a94977f47354100373b81f602235651a6257a698ccba034e22a0f763a00369"
 dependencies = [
  "cargo_metadata",
  "term",

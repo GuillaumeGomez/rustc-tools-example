@@ -1,19 +1,6 @@
-[package]
-name = "cargo-tools"
-version = "0.3.1"
-authors = ["Guillaume Gomez <guillaume1.gomez@gmail.com>"]
+[workspace]
 
-description = "Some internal rustc tools made accessible"
-repository = "https://github.com/GuillaumeGomez/rustc-tools"
-license = "MIT"
-readme = "README.md"
-edition = "2021"
-
-# A noop dependency that changes in the Rust repository, it's a bit of a hack.
-# See the `src/tools/rustc-workspace-hack/README.md` file in `rust-lang/rust`
-# for more information.
-rustc-workspace-hack = "1.0.0"
-
-[dependencies]
-rustc-tools = "0.3.2"
-cargo = "0.76"
+members = [
+    "cargo-tools",
+    "cargo-tools-inner",
+]
