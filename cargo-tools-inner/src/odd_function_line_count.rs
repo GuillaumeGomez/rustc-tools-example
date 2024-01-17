@@ -6,11 +6,10 @@ use rustc_session::{declare_lint_pass, declare_tool_lint};
 use rustc_span::Span;
 
 declare_tool_lint! {
-    // `lint` is the name of the binary here. It's required when creating a lint.
-    pub lint::ODD_FUNCTION_LINE_COUNT,
+    // `tools` is the name of the binary here. It's required when creating a lint.
+    pub tools::ODD_FUNCTION_LINE_COUNT,
     Deny,
-    "errors if a function has an odd number of lines",
-    report_in_external_macro: false
+    "errors if a function has an odd number of lines"
 }
 declare_lint_pass!(OddFunctionLineCount => [ODD_FUNCTION_LINE_COUNT]);
 

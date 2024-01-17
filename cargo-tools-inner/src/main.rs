@@ -21,6 +21,7 @@
 extern crate rustc_ast;
 extern crate rustc_hir;
 extern crate rustc_lint;
+extern crate rustc_middle;
 extern crate rustc_session;
 extern crate rustc_span;
 
@@ -28,6 +29,7 @@ use rustc_lint::LintStore;
 use rustc_tools::with_lints;
 
 mod odd_function_line_count;
+mod unwrap_call;
 mod warn_generics;
 
 fn main() {
@@ -36,6 +38,7 @@ fn main() {
         with_lints(args, vec![], |store: &mut LintStore| {
             store.register_early_pass(|| Box::new(warn_generics::WarnGenerics));
             store.register_late_pass(|_| Box::new(odd_function_line_count::OddFunctionLineCount));
+            store.register_late_pass(|_| Box::new(unwrap_call::UnwrapCall));
         }).expect("with_lints failed");
     }).expect("cargo_integration failed");
 }

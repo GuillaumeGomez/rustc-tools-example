@@ -2,11 +2,10 @@ use rustc_lint::{EarlyContext, EarlyLintPass, LintContext};
 use rustc_session::{declare_lint_pass, declare_tool_lint};
 
 declare_tool_lint! {
-    // `lint` is the name of the binary here. It's required when creating a lint.
-    pub lint::WARN_GENERICS,
+    // `tools` is the name of the binary here. It's required when creating a lint.
+    pub tools::WARN_GENERICS,
     Warn,
-    "warns if any item has generics",
-    report_in_external_macro: false
+    "warns if any item has generics"
 }
 declare_lint_pass!(WarnGenerics => [WARN_GENERICS]);
 
