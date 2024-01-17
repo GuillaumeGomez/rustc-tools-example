@@ -1,6 +1,6 @@
 use std::process::{Command, exit};
 
-pub fn get_supported_rustc_version() -> &'static str {
+fn get_supported_rustc_version() -> &'static str {
     const TOOLCHAIN_FILE: &str = include_str!("../rust-toolchain-link");
 
     TOOLCHAIN_FILE
