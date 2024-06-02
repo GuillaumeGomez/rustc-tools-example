@@ -28,11 +28,11 @@ impl<'tcx> LateLintPass<'tcx> for UnwrapCall {
                 if !is_option_or_result {
                     return;
                 }
-                cx.struct_span_lint(
+                cx.span_lint(
                     UNWRAP_CALL,
                     span,
                     "avoid using `unwrap` if possible",
-                    |diag| diag,
+                    |_| {},
                 );
             }
             _ => {}

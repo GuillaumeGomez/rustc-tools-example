@@ -16,9 +16,7 @@ impl EarlyLintPass for WarnGenerics {
             if generics.params.is_empty() {
                 return;
             }
-            cx.struct_span_lint(WARN_GENERICS, generics.span, "generics are ugly", |diag| {
-                diag
-            });
+            cx.span_lint(WARN_GENERICS, generics.span, "generics are ugly", |_| {});
         }
     }
 }

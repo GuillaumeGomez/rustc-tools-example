@@ -15,4 +15,4 @@ edition = "2021"
 rustc-workspace-hack = "1.0.0"
 
 [dependencies]
-rustc-tools = "0.3.3"
+rustc-tools = "0.78.0"
